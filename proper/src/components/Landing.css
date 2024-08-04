@@ -1,0 +1,38 @@
+body{
+  border: 1px solid black;
+}
+
+.cell {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+  }
+
+  .hinge{
+    animation: hinge 4s ease; 
+  }
+
+
+  @keyframes bounce {
+    70% { transform: translateY(0%); }
+    80% { transform: translateY(-15%); }
+    90% { transform: translateY(0%); }
+    95% { transform: translateY(-7%); }
+    97% { transform: translateY(0%); }
+    99% { transform: translateY(-3%); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes hinge {
+    0%{
+      transform: transformX(0px); 
+    }
+    100% {
+      transform: transformX(480px);
+    }
+  }
+  
+img{
+    height:128px;
+    width: 256px;
+}
