@@ -1,5 +1,4 @@
 import Landing from './components/Landing.jsx'
-import './App.css'
 
 function App() {
   return (

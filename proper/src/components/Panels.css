@@ -1,0 +1,47 @@
+.proper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 13.33vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.cell {
+    display: inline-block;
+}
+
+.hinge {
+    animation: hinge 4s ease; 
+}
+
+.panelpole {
+    height: auto; 
+    z-index: 2;
+}
+
+.panelpole img {
+    height: 13.33vh;
+    padding-left: 9vw;
+}
+
+@keyframes bounce {
+    70% { transform: translateY(0%); }
+    80% { transform: translateY(-15%); }
+    90% { transform: translateY(0%); }
+    95% { transform: translateY(-7%); }
+    97% { transform: translateY(0%); }
+    99% { transform: translateY(-3%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes hinge {
+    0% {
+        transform: translateX(0px); 
+    }
+    100% {
+        transform: translateX(480px);
+    }
+}
