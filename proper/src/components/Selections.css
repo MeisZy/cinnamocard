@@ -1,0 +1,49 @@
+/*lastchild*/
+
+.selectionsproper{
+    position: absolute;
+    height:100vh;
+    border: 1px solid black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    width: 200px;
+    border: 1px solid #555;
+  }
+
+ul li{
+    padding-top: 100px;
+}
+ul li:hover{
+    padding-top: 100px;
+    background-color:black;
+}
+
+li a {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:first-child{
+  background: black;
+}
+
+li {
+  text-align: center;
+}
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
