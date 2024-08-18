@@ -1,5 +1,5 @@
 .cellproper {
-    position: fixed;
+    padding-top:60px;
     top: 8%;
     left: 0;
     width: 100%;
@@ -10,14 +10,14 @@
 }
 
 .cellproper div {
-    margin-right: 1.5vw;
+    margin-right: 0.25vw;
 }
 
 .cells {
     text-align: center;
 }
 
-.board1, .board3 {
+.board1, .board2 {
     width: 272px;
     height: 144px;
     z-index: 2;
@@ -25,14 +25,15 @@
     background-repeat:no-repeat;
     background-size: cover;
     display: inline-block;
-    animation: bounce 1s;
+    animation: bounce 0.75s;
+    animation-fill-mode: forwards;
 }
 
-.board3{
-    animation-delay:1s;
+.board2{
+    animation-delay:0.25s;
 }
 
-.board2 {
+.board3 {
     width: 272px;
     height: 144px;
     z-index: 2;
@@ -41,7 +42,7 @@
     background-size: cover;
     display: inline-block;
     animation: hingebounce 3s;
-    animation-delay: 2s;
+    animation-delay: 0.70s;
     animation-fill-mode: forwards;
 }
 
@@ -61,9 +62,18 @@
     animation: hinge 4s ease; 
 }
 
+.lowerguide{
+    background-color: black;
+    position:absolute;
+    bottom:30px;
+    left:50%;
+}
+
+.lowerguide img{
+}
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 
-    40% { transform: translateY(-30px); } 
+    40% { transform: translateY(-45px); } 
     60% { transform: translateY(-15px); } 
 }
 
@@ -71,8 +81,11 @@
     0% {transform: translateY(-150px)};
     20%, 50%{ transform: translateY(0); } 
     40% { transform: translateY(-30px); } 
-    60% { transform: translateY(-15px); }
-    100% { transform: rotate(-45deg)} 
+    50% { transform: translateY(-15px); }
+    60% { transform: rotate(15deg)} 
+    70% { transform: rotate(20deg)} 
+    85% { transform: rotate(15deg)} 
+    100% { transform: rotate(30deg) translateY(60px)} 
 }
 
 @keyframes hinge {

@@ -3,7 +3,7 @@
 .selectionsproper{
     position: absolute;
     height:100vh;
-    border: 1px solid black;
+    padding-top:100vh;
 }
 
 ul {
@@ -26,12 +26,12 @@ li a {
   display: flex;
   justify-content:center;
   align-items: center;
-  color: #fff;
+  color: #000000;
   text-decoration: none;
 }
 
-nav ul li a:first-child{
-  background: black;
+nav ul li:first-child a {
+  color: yellow;
 }
 
 li {
