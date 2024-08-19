@@ -1,5 +1,5 @@
 import './Panels.css';
-import Arrow from '../assets/arrows.png'
+import CinnArrow from '../assets/cinnarrows.png'
 //import Panel from '../assets/panel.png';
 //import Pole from '../assets/panel_pole.png';
 
@@ -20,7 +20,7 @@ function Panels() {
           </div>
         </div>
         <div className='lowerguide'>
-          <img src={Arrow}></img>
+          <img src={CinnArrow}></img>
         </div>
     </>
   );
