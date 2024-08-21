@@ -20,7 +20,15 @@ function Panels() {
           </div>
         </div>
         <div className='lowerguide'>
-          <img src={CinnArrow}></img>
+          <a href="https://youtube.com">
+            <img src={CinnArrow}></img>
+          </a>
+        </div>
+        <div className='selectionsproper'>
+          <div className='items'>test 1</div>
+          <div className='items'>test 1</div>
+          <div className='items'>test 1</div>
+          <div className='items'>test 1</div>
         </div>
     </>
   );
