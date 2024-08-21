@@ -5,22 +5,20 @@ function Selections() {
   return (
     <>
         <div className='selectionsproper'>
-            <nav>
                 <ul>
                     <li>
-                       <a>test 1</a>
+                       <div className='items'>test 1</div>
                     </li>
                     <li>
-                       <a>test 1</a>
+                       <div className='items'>test 1</div>
                     </li>
                     <li>
-                      <a>test 1</a>
+                      <div className='items'>test 1</div>
                     </li>
                     <li>
-                      <a>test 1</a>
+                      <div className='items'>test 1</div>
                     </li>
                 </ul>
-            </nav>
         </div>
     </>
   )

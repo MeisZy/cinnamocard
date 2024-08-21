@@ -4,8 +4,8 @@ import Selections from './Selections.jsx'
 function Landing() {
   return (
     <>
-      <Selections/>
-      <Panels/>
+        <Panels/>
+        <Selections/>
     </>
   )
 }

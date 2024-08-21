@@ -1,49 +1,23 @@
-/*lastchild*/
-
-.selectionsproper{
-    position: absolute;
-    height:100vh;
-    padding-top:100vh;
+.selectionsproper {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  opacity: 1;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding:0;
-    width: 200px;
-    border: 1px solid #555;
-  }
-
-ul li{
-    padding-top: 100px;
-}
-ul li:hover{
-    padding-top: 100px;
-    background-color:black;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  justify-content: space-around; 
 }
 
-li a {
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  color: #000000;
-  text-decoration: none;
+.items {
+  transition: height 1s ease;
 }
 
-nav ul li:first-child a {
-  color: yellow;
-}
-
-li {
-  text-align: center;
-}
-
-li a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+.items:hover {
+  height: 100px;
 }
