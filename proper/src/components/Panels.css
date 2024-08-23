@@ -1,5 +1,5 @@
 .cellproper {
-    padding-top:60px;
+    padding-top: 60px;
     top: 8%;
     left: 0;
     width: 100%;
@@ -22,15 +22,15 @@
     height: 144px;
     z-index: 2;
     background-image: url("../assets/panel.png");
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     display: inline-block;
     animation: bounce 0.75s;
     animation-fill-mode: forwards;
 }
 
-.board2{
-    animation-delay:0.25s;
+.board2 {
+    animation-delay: 0.25s;
 }
 
 .board3 {
@@ -38,7 +38,7 @@
     height: 144px;
     z-index: 2;
     background-image: url("../assets/panel.png");
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     display: inline-block;
     animation: hingebounce 3s;
@@ -54,7 +54,7 @@
 .cells p {
     top: 0%;
     left: 0%;
-    padding: 50px;
+    padding: 20px;
     color: white;
 }
 
@@ -62,19 +62,19 @@
     animation: hinge 4s ease; 
 }
 
-.lowerguide{
-    position:absolute;
-    bottom:100px;
-    left:45%;
-
+.lowerguide {
+    position: absolute;
+    bottom: 100px;
+    left: 45%;
     animation: moving 4s infinite;
     animation-fill-mode: forwards;
 }
 
-.lowerguide img{
+.lowerguide img {
     height: 180px;
-    width:180px;
+    width: 180px;
 }
+
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 
     40% { transform: translateY(-45px); } 
@@ -82,74 +82,60 @@
 }
 
 @keyframes hingebounce {
-    0% {transform: translateY(-150px)};
-    20%, 50%{ transform: translateY(0); } 
+    0% { transform: translateY(-150px); }
+    20%, 50% { transform: translateY(0); } 
     40% { transform: translateY(-30px); } 
     50% { transform: translateY(-15px); }
-    60% { transform: rotate(15deg)} 
-    70% { transform: rotate(20deg)} 
-    85% { transform: rotate(15deg)} 
-    100% { transform: rotate(30deg) translateY(60px)} 
+    60% { transform: rotate(15deg); } 
+    70% { transform: rotate(20deg); } 
+    85% { transform: rotate(15deg); } 
+    100% { transform: rotate(30deg) translateY(60px); } 
 }
 
 @keyframes hinge {
-    0% {
-        transform: translateX(0px); 
-    }
-    100% {
-        transform: translateX(480px);
-    }
+    0% { transform: translateX(0px); } 
+    100% { transform: translateX(480px); }
 }
 
 @keyframes moving {
-    0%{
-        transform: translateY(0px);
-    }
-    50%{
-        transform: translateY(+40px);
-    }
-    100%{
-        transform: translateY(0px);
-    }
-}
-
-.bounce {
-    animation-name: bounce;
-    -webkit-animation-name: bounce;
-    animation-duration: 3s;
-    -webkit-animation-duration: 3s;
-    animation-fill-mode: both;
-    -webkit-animation-fill-mode: both;
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(40px); }
+    100% { transform: translateY(0px); }
 }
 
 .selectionsproper {
     position: absolute;
-    bottom: 0;
+    bottom: 7.5px;
     margin: 0;
     width: 100%;
-    background-color: black;
     display: flex; 
     justify-content: space-around;
-  }
-  
-  ul {
+    z-index:3;
+}
+
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex; 
     justify-content: space-around; 
-  }
-  
-  .items {
+}
+
+.items {
     display: inline-block;
     padding: 10px;
-    background-color: #333;
     color: white;
     text-align: center;
-    transition: height 1s ease;
-  }
-  
-  .items:hover {
-    height: 100px;
-  }
-  
+    transition: transform 1s ease, opacity 0.5s ease, height 1s ease;
+    opacity: 1;
+    width: 60px;
+    height: 60px;
+    background-image: url('../assets/arrowup.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.spin {
+    transform: translateY(-100px) rotate(360deg);
+    transition: transform 1s ease-in-out;
+}
