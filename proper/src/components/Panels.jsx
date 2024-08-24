@@ -1,9 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Panels.css';
 import CinnArrow from '../assets/cinnarrows.png';
 
 function Panels() {
   const [clickedItemIndex, setClickedItemIndex] = useState(null);
+  const [showSelections, setShowSelections] = useState(false);
+  const [showCinnArrow, setShowCinnArrow] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowCinnArrow(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleClick = (index) => {
     setClickedItemIndex(index);
@@ -11,6 +21,10 @@ function Panels() {
     setTimeout(() => {
       setClickedItemIndex(null);
     }, 1000); 
+  };
+
+  const handleArrowClick = () => {
+    setShowSelections(true);
   };
 
   return (
@@ -28,12 +42,12 @@ function Panels() {
           </div>
         </div>
       </div>
-      <div className='lowerguide'>
-        <a href="#">
+      <div className={`lowerguide ${showCinnArrow ? 'visible' : ''}`}>
+        <a href="#" onClick={handleArrowClick}>
           <img src={CinnArrow} alt="CinnArrow"></img>
         </a>
       </div>
-      <div className='selectionsproper'>
+      <div className={`selectionsproper ${showSelections ? 'visible' : ''}`}>
         {[0, 1, 2, 3].map(index => (
           <a href="#"
              key={index}

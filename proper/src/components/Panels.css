@@ -68,6 +68,12 @@
     left: 45%;
     animation: moving 4s infinite;
     animation-fill-mode: forwards;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.lowerguide.visible {
+    opacity: 1;
 }
 
 .lowerguide img {
@@ -110,7 +116,13 @@
     width: 100%;
     display: flex; 
     justify-content: space-around;
-    z-index:3;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.selectionsproper.visible {
+    opacity: 1;
 }
 
 ul {
@@ -130,7 +142,7 @@ ul {
     opacity: 1;
     width: 60px;
     height: 60px;
-    background-image: url('../assets/arrowup.png');
+    background-image: url('../assets/arrowup.png'); 
     background-repeat: no-repeat;
     background-size: cover;
 }
