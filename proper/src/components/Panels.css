@@ -105,7 +105,7 @@
 
 @keyframes moving {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(40px); }
+    50% { transform: translateY(-40px); }
     100% { transform: translateY(0px); }
 }
 
@@ -119,6 +119,7 @@
     z-index: 3;
     opacity: 0;
     transition: opacity 1s ease;
+    animation: moving 5s infinite;
 }
 
 .selectionsproper.visible {
@@ -150,4 +151,50 @@ ul {
 .spin {
     transform: translateY(-100px) rotate(360deg);
     transition: transform 1s ease-in-out;
+}
+
+.displayproper {
+    position: absolute;
+    bottom: 7.5px;
+    margin: 0;
+    width: 100%;
+    display: flex; 
+    justify-content: space-around;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 1s ease;
+
+}
+
+.displayitems {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: space-around; 
+    width: 50%;
+    opacity: 0;                
+    transition: opacity 1s ease, transform 2s ease;
+
+    border: 1px solid black;
+}
+
+.displayitems.animate {
+    opacity: 1;
+    animation: onClickAnimation 2s ease; 
+}
+
+@keyframes onClickAnimation {
+    0% {
+        transform: translate(50px, 50px);
+    }
+    40% {
+        transform: translate(50px, -300px);
+    }
+    80% {
+        transform: translate(400px, -300px);
+    }
+    100% {
+        transform: translate(400px, 500px);
+    }
 }
