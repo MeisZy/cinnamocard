@@ -1,3 +1,7 @@
+.cellproper, .selectionsproper, .displayproper {
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
 .cellproper {
     padding-top: 60px;
     top: 8%;
@@ -139,17 +143,17 @@ ul {
     padding: 10px;
     color: white;
     text-align: center;
-    transition: transform 1s ease, opacity 0.5s ease, height 1s ease;
+    transition: ease, opacity 0.5s ease, height 1s ease;
     opacity: 1;
-    width: 60px;
-    height: 60px;
-    background-image: url('../assets/arrowup.png'); 
+    width: 200px;
+    height: 100px;
+    background-image: url('../assets/Babu.png'); 
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 .spin {
-    transform: translateY(-100px) rotate(360deg);
     transition: transform 1s ease-in-out;
 }
 
@@ -162,7 +166,7 @@ ul {
     justify-content: space-around;
     z-index: 2;
     opacity: 1;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease, transform 1s ease; /* Added transform transition */
 }
 
 .displayitems {
@@ -178,20 +182,35 @@ ul {
 
 .displayitems.animate {
     opacity: 1;
-    animation: onClickAnimation 10s ease; /* Ensure this matches the timeout duration */
+    animation: onClickAnimation 2.5s ease; /* check if matches timeout in jsx */
+}
+
+.displayitems img {
+    width: 50px;
+    height: 50px;
 }
 
 @keyframes onClickAnimation {
     0% {
         transform: translate(0px, 0px);
     }
-    40% {
-        transform: translate(0px, -150px);
+    25% {
+        transform: translate(0px, -450px);
     }
-    80% {
-        transform: translate(400px, -150px);
+    50% {
+        transform: translate(800px, -450px) rotate(90deg);
+    }
+    65% {
+        transform: translate(800px, -450px) rotate(180deg);
+    }
+    85% {
+        transform: translate(800px, 0px) rotate(270deg);
     }
     100% {
-        transform: translate(400px, 200px);
+        transform: translate(25px, -25px) opacity(0);
     }
+}
+
+.displayproper.visible {
+    transform: translateX(-300px); /* Move 300px to the left */
 }

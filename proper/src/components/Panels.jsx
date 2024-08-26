@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 import './Panels.css';
 import CinnArrow from '../assets/cinnarrows.png';
+import Arrow from '../assets/arrowup.png';
 
 function Panels() {
   const [clickedItemIndex, setClickedItemIndex] = useState(null);
   const [showSelections, setShowSelections] = useState(false);
   const [showCinnArrow, setShowCinnArrow] = useState(false);
   const [animateDisplayIndex, setAnimateDisplayIndex] = useState(null);
+  const [showContent, setShowContent] = useState(false); // New state
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowCinnArrow(true);
-    }, 5000);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -20,15 +22,18 @@ function Panels() {
     setClickedItemIndex(index);
     setAnimateDisplayIndex(index);
 
-    // Adjust this timeout to match the duration of the animation
     setTimeout(() => {
       setClickedItemIndex(null);
       setAnimateDisplayIndex(null);
-    }, 10000); // Ensure this matches the duration of the animation
+    }, 5000); 
   };
 
   const handleArrowClick = () => {
     setShowSelections(true);
+  };
+
+  const handleDisplayClick = () => {
+    setShowContent(prev => !prev); // Toggle content visibility
   };
 
   return (
@@ -52,7 +57,7 @@ function Panels() {
         </a>
       </div>
       <div className={`selectionsproper ${showSelections ? 'visible' : ''}`}>
-        {[0, 1, 2, 3].map(index => (
+        {[0].map(index => (
           <a href="#"
              key={index}
              className={`items ${clickedItemIndex === index ? 'spin' : ''}`}
@@ -60,15 +65,23 @@ function Panels() {
           </a>
         ))}
       </div>
-      <div className={`displayproper ${showSelections ? 'visible' : ''}`}>
-        {[0, 1, 2, 3].map(index => (
+      <div 
+        className={`displayproper ${showSelections ? 'visible' : ''}`} 
+        onClick={handleDisplayClick} // Add onClick handler
+      >
+        {[0].map(index => (
           <a href="#"
              key={index}
              className={`displayitems ${animateDisplayIndex === index ? 'animate' : ''}`}
           >
-            <p>Item {CinnArrow}</p>
+            <a>
+              <img src={Arrow} style={{border: '1px solid black'}}/>
+            </a>
           </a>
         ))}
+        <div className={`contentproper ${showContent ? 'visible' : ''}`}> {/* Add conditional class */}
+          {/* Your content here */}
+        </div>
       </div>
     </>
   );

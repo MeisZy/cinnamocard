@@ -1,9 +1,9 @@
-import Landing from './components/Landing.jsx'
+import Panels from './components/Panels.jsx'
 
 function App() {
   return (
     <>
-        <Landing/>
+        <Panels/>
     </>
   )
 }
