@@ -25,12 +25,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: inline-block;
-    animation: bounce 0.75s;
+    animation: bounce 2.75s;
     animation-fill-mode: forwards;
 }
 
 .board2 {
-    animation-delay: 0.25s;
+    animation-delay: 0.1s;
 }
 
 .board3 {
@@ -163,7 +163,6 @@ ul {
     z-index: 2;
     opacity: 1;
     transition: opacity 1s ease;
-
 }
 
 .displayitems {
@@ -174,27 +173,25 @@ ul {
     justify-content: space-around; 
     width: 50%;
     opacity: 0;                
-    transition: opacity 1s ease, transform 2s ease;
-
-    border: 1px solid black;
+    transition: opacity 1s ease;
 }
 
 .displayitems.animate {
     opacity: 1;
-    animation: onClickAnimation 2s ease; 
+    animation: onClickAnimation 10s ease; /* Ensure this matches the timeout duration */
 }
 
 @keyframes onClickAnimation {
     0% {
-        transform: translate(50px, 50px);
+        transform: translate(0px, 0px);
     }
     40% {
-        transform: translate(50px, -300px);
+        transform: translate(0px, -150px);
     }
     80% {
-        transform: translate(400px, -300px);
+        transform: translate(400px, -150px);
     }
     100% {
-        transform: translate(400px, 500px);
+        transform: translate(400px, 200px);
     }
 }

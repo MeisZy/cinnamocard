@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Panels.css';
 import CinnArrow from '../assets/cinnarrows.png';
-import DebuggerPic from '../assets/zy.png';
 
 function Panels() {
   const [clickedItemIndex, setClickedItemIndex] = useState(null);
@@ -21,11 +20,11 @@ function Panels() {
     setClickedItemIndex(index);
     setAnimateDisplayIndex(index);
 
-    // Reset animation after it's complete
+    // Adjust this timeout to match the duration of the animation
     setTimeout(() => {
       setClickedItemIndex(null);
       setAnimateDisplayIndex(null);
-    }, 1000); 
+    }, 10000); // Ensure this matches the duration of the animation
   };
 
   const handleArrowClick = () => {
@@ -67,8 +66,7 @@ function Panels() {
              key={index}
              className={`displayitems ${animateDisplayIndex === index ? 'animate' : ''}`}
           >
-            {/* Replace with actual content or images */}
-            <p>Item {index}</p>
+            <p>Item {CinnArrow}</p>
           </a>
         ))}
       </div>
