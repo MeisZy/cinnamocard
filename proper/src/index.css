@@ -2,10 +2,12 @@
 
 
 body{
-  margin:0;
+  margin: 0;
+  bottom:0;
   background-image: url("./assets/cafe_cinnamon.png");
   background-size: 100%;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
+  overflow-x: hidden;
 }
 
 *{
