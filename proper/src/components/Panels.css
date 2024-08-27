@@ -1,5 +1,5 @@
 .cellproper, .selectionsproper, .displayproper {
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box; 
 }
 
 .cellproper {
@@ -115,7 +115,7 @@
 
 .selectionsproper {
     position: absolute;
-    bottom: 7.5px;
+    bottom: 25px; 
     margin: 0;
     width: 100%;
     display: flex; 
@@ -166,7 +166,7 @@ ul {
     justify-content: space-around;
     z-index: 2;
     opacity: 1;
-    transition: opacity 1s ease, transform 1s ease; /* Added transform transition */
+    transition: opacity 1s ease, transform 1s ease; 
 }
 
 .displayitems {
@@ -200,17 +200,28 @@ ul {
     50% {
         transform: translate(800px, -450px) rotate(90deg);
     }
-    65% {
-        transform: translate(800px, -450px) rotate(180deg);
-    }
-    85% {
-        transform: translate(800px, 0px) rotate(270deg);
+    75% {
+        transform: translate(800px, 0px) rotate(180deg); /* Move south */
     }
     100% {
-        transform: translate(25px, -25px) opacity(0);
+        transform: translate(0px, 0px) rotate(270deg) opacity(0); /* Align back to original position */
     }
 }
 
+
+
 .displayproper.visible {
-    transform: translateX(-300px); /* Move 300px to the left */
+    transform: translateX(-300px);
+    z-index: 2; 
+}
+
+.texts{
+    position: absolute;
+}
+
+.contentproper{
+    position:absolute;
+    top:25%;
+    left: 25%;
+
 }

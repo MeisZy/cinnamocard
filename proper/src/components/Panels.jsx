@@ -33,11 +33,11 @@ function Panels() {
   };
 
   const handleDisplayClick = () => {
-    setShowContent(prev => !prev); // Toggle content visibility
+    setShowContent(prev => !prev); 
   };
 
   return (
-    <>
+    <div className='parent'>
       <div className='cellproper'>
         <div className='cells'>
           <div className='board1'>
@@ -47,7 +47,7 @@ function Panels() {
             <p>Birthday,</p>
           </div>
           <div className='board3'>
-            <p style={{ color: '#4cb4f0' }}>Name</p>
+            <p style={{ color: '#4cb4f0' }}>(name)</p>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@ function Panels() {
       </div>
       <div 
         className={`displayproper ${showSelections ? 'visible' : ''}`} 
-        onClick={handleDisplayClick} // Add onClick handler
+        onClick={handleDisplayClick} 
       >
         {[0].map(index => (
           <a href="#"
@@ -79,11 +79,11 @@ function Panels() {
             </a>
           </a>
         ))}
-        <div className={`contentproper ${showContent ? 'visible' : ''}`}> {/* Add conditional class */}
-          {/* Your content here */}
-        </div>
       </div>
-    </>
+        <div className={`contentproper ${showContent ? 'visible' : ''}`}> 
+          <div className='texts'>test</div>
+        </div>
+    </div>
   );
 }
 
