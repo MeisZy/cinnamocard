@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import './Panels.css';
+import Babu from '../assets/Babu.png';
+import Zy from '../assets/zy.png';
 import CinnArrow from '../assets/cinnarrows.png';
-import Arrow from '../assets/arrowup.png';
+import MailImage from '../assets/mail.png';
+import PanelImage from '../assets/panel.png';
 
 function Panels() {
-  const [clickedItemIndex, setClickedItemIndex] = useState(null);
-  const [showSelections, setShowSelections] = useState(false);
   const [showCinnArrow, setShowCinnArrow] = useState(false);
-  const [animateDisplayIndex, setAnimateDisplayIndex] = useState(null);
-  const [showContent, setShowContent] = useState(false); // New state
+  const [showContent, setShowContent] = useState(false);
+  const [backgroundImage, setBackgroundImage] = useState(MailImage);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,22 +19,9 @@ function Panels() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleClick = (index) => {
-    setClickedItemIndex(index);
-    setAnimateDisplayIndex(index);
-
-    setTimeout(() => {
-      setClickedItemIndex(null);
-      setAnimateDisplayIndex(null);
-    }, 5000); 
-  };
-
-  const handleArrowClick = () => {
-    setShowSelections(true);
-  };
-
-  const handleDisplayClick = () => {
-    setShowContent(prev => !prev); 
+  const handleCinnArrowClick = () => {
+    setShowContent(true);
+    setBackgroundImage(PanelImage);
   };
 
   return (
@@ -46,43 +34,28 @@ function Panels() {
           <div className='board2'>
             <p>Birthday,</p>
           </div>
-          <div className='board3'>
-            <p style={{ color: '#4cb4f0' }}>Nigga!</p>
+          <div className='board3 lastchild'>
+            <p style={{ color: '#4cb4f0' }}>Zyreel!</p>
           </div>
         </div>
       </div>
-      <div className={`lowerguide ${showCinnArrow ? 'visible' : ''}`}>
-        <a href="#" onClick={handleArrowClick}>
-          <img src={CinnArrow} alt="CinnArrow"></img>
-        </a>
-      </div>
-      <div className={`selectionsproper ${showSelections ? 'visible' : ''}`}>
-        {[0].map(index => (
-          <a href="#"
-             key={index}
-             className={`items ${clickedItemIndex === index ? 'spin' : ''}`}
-             onClick={() => handleClick(index)}>
+      <div className='selectionsproper'>
+          <a href="https://facebook.com/regiel.garrido">
+            <img src={Babu} alt="Babu"/>
           </a>
-        ))}
       </div>
-      <div 
-        className={`displayproper ${showSelections ? 'visible' : ''}`} 
-        onClick={handleDisplayClick} 
-      >
-        {[0].map(index => (
-          <a href="#"
-             key={index}
-             className={`displayitems ${animateDisplayIndex === index ? 'animate' : ''}`}
-          >
-            <a>
-              <img src={Arrow} style={{border: '1px solid black'}}/>
-            </a>
-          </a>
-        ))}
+      <div className="cinnarrow" onClick={handleCinnArrowClick}>
+        <img src={CinnArrow} alt="CinnArrow"/>
       </div>
-        <div className={`contentproper ${showContent ? 'visible' : ''}`}> 
-          <div className='texts'>NIGGA</div>
-        </div>
+      <div className={`contentproper ${showContent ? 'show' : ''}`} style={{ backgroundImage: `url(${backgroundImage})` }}>
+
+        <p className={showContent ? 'show' : ''}>
+          HI ZY! Happy 22nd Birthday! Made this thing in 5 days total. 
+          Wala akong maisip na sabihin ano hahah stay what you are, 
+          sana magbago ka na tapos ayon lang always do your best! (wag mo sanang makita mga nasa c.ai ko salamat)
+        </p>
+        <img src={Zy} alt="Zy" className={showContent ? 'show' : ''} />
+      </div>
     </div>
   );
 }

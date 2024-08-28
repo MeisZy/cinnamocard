@@ -17,6 +17,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    'no-dupe-keys':'off'
+    'no-dupe-keys': 'off',
+    'no-undef': 'off',
+    'no-unused-vars': 'off',
   },
 }
