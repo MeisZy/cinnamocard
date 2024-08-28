@@ -50,7 +50,7 @@ function Panels() {
       <div className={`contentproper ${showContent ? 'show' : ''}`} style={{ backgroundImage: `url(${backgroundImage})` }}>
 
         <p className={showContent ? 'show' : ''}>
-          HI ZY! Happy 22nd Birthday! Made this thing in 5 days total. 
+          HI ZY! Happy 22nd Birthday! 
           Wala akong maisip na sabihin ano hahah stay what you are, 
           sana magbago ka na tapos ayon lang always do your best! (wag mo sanang makita mga nasa c.ai ko salamat)
         </p>
