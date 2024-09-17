@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "cross-env PORT=5175 react-scripts start",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "d3": "^7.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
