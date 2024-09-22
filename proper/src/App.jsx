@@ -1,11 +1,15 @@
-import Panels from './components/Panels.jsx'
+import React, { Suspense } from 'react';
+
+const Panels = React.lazy(() => import('./components/Panels.jsx'));
 
 function App() {
   return (
     <>
-        <Panels/>
+      <Suspense fallback={<div>Loading Panels...</div>}>
+        <Panels />
+      </Suspense>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
