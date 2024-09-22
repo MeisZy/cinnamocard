@@ -1,28 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Panels.css';
+import Babu from '../assets/Babu.png';
+import Zy from '../assets/zy.png';
+import CinnArrow from '../assets/cinnarrows.png';
+import MailImage from '../assets/mail.png';
+import PanelImage from '../assets/panel.png';
 
 function Panels() {
   const [showCinnArrow, setShowCinnArrow] = useState(false);
   const [showContent, setShowContent] = useState(false);
-  const [backgroundImage, setBackgroundImage] = useState(null);
-  const [babuImage, setBabuImage] = useState(null);
-  const [cinnArrowImage, setCinnArrowImage] = useState(null);
-  const [zyImage, setZyImage] = useState(null);
+  const [backgroundImage, setBackgroundImage] = useState(MailImage);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      import('../assets/cinnarrows.png').then(image => setCinnArrowImage(image.default));
+      setShowCinnArrow(true);
     }, 2500);
-
-    import('../assets/Babu.png').then(image => setBabuImage(image.default));
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleCinnArrowClick = () => {
     setShowContent(true);
-    import('../assets/panel.png').then(image => setBackgroundImage(image.default));
-    import('../assets/zy.png').then(image => setZyImage(image.default));
+    setBackgroundImage(PanelImage);
   };
 
   return (
@@ -41,22 +40,21 @@ function Panels() {
         </div>
       </div>
       <div className='selectionsproper'>
-        <a href="https://facebook.com/regiel.garrido">
-          {babuImage && <img src={babuImage} alt="Babu" />}
-        </a>
+          <a href="https://facebook.com/regiel.garrido">
+            <img src={Babu} alt="Babu"/>
+          </a>
       </div>
-      {showCinnArrow && (
-        <div className="cinnarrow" onClick={handleCinnArrowClick}>
-          {cinnArrowImage && <img src={cinnArrowImage} alt="CinnArrow" />}
-        </div>
-      )}
+      <div className="cinnarrow" onClick={handleCinnArrowClick}>
+        <img src={CinnArrow} alt="CinnArrow"/>
+      </div>
       <div className={`contentproper ${showContent ? 'show' : ''}`} style={{ backgroundImage: `url(${backgroundImage})` }}>
-        {showContent && (
-          <>
-            <p>HI ZY! Happy 22nd Birthday! Wala akong maisip na sabihin ano hahah stay what you are...</p>
-            {zyImage && <img src={zyImage} alt="Zy" />}
-          </>
-        )}
+
+        <p className={showContent ? 'show' : ''}>
+          HI ZY! Happy 22nd Birthday! 
+          Wala akong maisip na sabihin ano hahah stay what you are, 
+          sana magbago ka na tapos ayon lang always do your best! (wag mo sanang makita mga nasa c.ai ko salamat)
+        </p>
+        <img src={Zy} alt="Zy" className={showContent ? 'show' : ''} />
       </div>
     </div>
   );
