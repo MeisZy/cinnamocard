@@ -9,17 +9,13 @@ function Panels() {
   const [cinnArrowImage, setCinnArrowImage] = useState(null);
   const [zyImage, setZyImage] = useState(null);
 
-  // Lazy load images on mount
   useEffect(() => {
-    // Lazy load CinnArrow after 2.5 seconds
     const timer = setTimeout(() => {
       import('../assets/cinnarrows.png').then(image => setCinnArrowImage(image.default));
     }, 2500);
 
-    // Load Babu image immediately
     import('../assets/Babu.png').then(image => setBabuImage(image.default));
 
-    // Cleanup timer on unmount
     return () => clearTimeout(timer);
   }, []);
 
